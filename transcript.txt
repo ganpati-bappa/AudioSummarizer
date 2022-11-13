@@ -1,0 +1,11 @@
+Today I'm going to teach you how to run Dijkstra's algorithm on a weighted directed graph. Dijkstra's algorithm tells you the shortest distance from one node to every other node in the graph. This differs from trims and crusticles, which result in minimum spanning trees. To use the following graph for our example, we'll keep a list of unvisited nodes at the bottom. Our first step is to pick the starting node.
+Let's choose a we'll use the table on the right to keep track of distances. Remember, the distances we are measuring are from our starting node A. We put zero for A and infinity for the others, as we haven't visited them yet. The next step is to examine the edges leaving A. We can reach B and C from A, so let's update the chart with the corresponding costs.
+Next we look at the chart and pick the smallest edge of which the vertex hasn't been chosen, in this case, C.
+Let's cross off C in the unvisited note list, marking it as closed. After choosing C, we examine the edges leaving C and update the chart accordingly. B is now reachable from A with the cost of three by traveling through C. Also, D and E become reachable for the first time. Let's do the same thing as before choosing the smallest path with an unclosed node.
+This time it's b. We repeat the process examining the edges leaving B, and updating the costs of getting to D and E.
+Now we choose D. This time there are no updates to our table, as there are no edges leaving D.
+Finally, we choose E. Again, there are no updates. But this time, because the edge leaving E does not result in a shorter path, all the edges in the graph have now been visited and are closed.
+Here is the shortest path from A to the other nodes.
+The time complexity of Dijkstra's is big o of v logv if a fibonacci heap is used. Put simply, this is a result of creating the q of distance values and looping through the edges of each node.
+Here is the pseudocode for Daisy's algorithm. For more information, please visit the source shown below in the description.
+And that's it. I hope this video gave you a good understanding of Dijkstra's algorithm.
